@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
+  const scrollToBooking = () => {
+    const section = document.getElementById("booking-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-gradient-hero text-primary-foreground relative overflow-hidden">
       {/* Background Elements */}
@@ -24,7 +31,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-cta" />
-                <span className="text-white/90">9829555897 / 9609306820</span>
+                <span className="text-white/90">9609306820 / 9829555897</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-cta" />
@@ -32,7 +39,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
 
           {/* Contact & Social */}
           <div className="space-y-6">
@@ -42,12 +48,13 @@ const Footer = () => {
               variant="cta" 
               size="lg"
               className="w-full"
+              onClick={scrollToBooking} // Scroll to booking section
             >
               <Phone className="mr-2 h-4 w-4" />
               Book Now
             </Button>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 mt-4">
               <a 
                 href="#" 
                 className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -72,7 +79,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
       </div>
     </footer>
   );

@@ -58,6 +58,10 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              onClick={() => window.open(
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.4119167173317!2d75.76913071101654!3d26.8586509765821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5daf6798857%3A0xae2889faf22e8a84!2sArt%20of%20Living%20Yoga%20and%20Meditation%20Center%20%E2%80%93%20Mansarovar!5e0!3m2!1sen!2sin!4v1757769923861!5m2!1sen!2sin",
+                "_blank"
+              )}
             >
               <MapPin className="mr-2 h-5 w-5" />
               View Centre Location
@@ -74,14 +78,16 @@ const Hero = () => {
         </div>
 
         {/* Visual Element */}
-        <div className="relative lg:pl-12 float-up">
-          <div className="relative">
+        <div className="relative lg:pl-12 flex justify-center items-center float-up">
+          <div className="relative transition-transform duration-300 hover:scale-105 cursor-pointer"
+               onClick={() => window.open("https://www.srisriwellbeing.com/", "_blank")}
+          >
             <div className="absolute -inset-4 bg-gradient-card rounded-3xl shadow-card" />
             <div className="relative bg-card rounded-2xl p-8 shadow-soft border border-border/50 flex items-center justify-center">
               <img 
                 src={sriSriLogo} 
                 alt="Sri Sri Wellbeing Logo"
-                className="max-w-full h-auto"
+                className="max-w-[260px] h-auto object-contain"
               />
             </div>
           </div>

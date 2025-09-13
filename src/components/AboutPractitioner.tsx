@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, Heart, Users, Star } from "lucide-react";
-import hemenshiPortrait from "@/assets/hemanshi-portrait.jpg";
+import hemenshiPortrait from "@/assets/hemanshi-portrait.png";
 
 const AboutPractitioner = () => {
   return (

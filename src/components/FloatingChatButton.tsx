@@ -18,16 +18,16 @@ const FloatingChatButton = () => {
           <Button 
             variant="wellness" 
             className="w-full justify-start"
-            onClick={() => window.open('tel:9829555897', '_self')}
+            onClick={() => window.open('tel:9609306820', '_self')}
           >
             <Phone className="mr-3 h-4 w-4" />
-            Call Now - 9829555897
+            Call Now - 9609306820
           </Button>
           
           <Button 
             variant="outline" 
             className="w-full justify-start"
-            onClick={() => window.open('https://wa.me/919829555897?text=Hi, I would like to book an osteopathy session with Hemanshi Mundhra', '_blank')}
+            onClick={() => window.open('https://wa.me/919609306820?text=Hi, I would like to book an osteopathy session with Hemanshi Mundhra', '_blank')}
           >
             <MessageCircle className="mr-3 h-4 w-4" />
             WhatsApp

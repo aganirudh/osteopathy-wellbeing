@@ -34,7 +34,7 @@ const BookingContact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Call Us</p>
-                      <p className="text-lg text-primary font-semibold">9829555897 / 9609306820</p>
+                      <p className="text-lg text-primary font-semibold">9609306820 / 9829555897</p>
                     </div>
                   </div>
 
@@ -55,7 +55,7 @@ const BookingContact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Working Hours</p>
-                      <p className="text-muted-foreground">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                      <p className="text-muted-foreground">Mon - Sat: 10:00 AM - 6:00 PM</p>
                       <p className="text-sm text-muted-foreground">Sunday: By appointment</p>
                     </div>
                   </div>
@@ -78,7 +78,8 @@ const BookingContact = () => {
               <Button 
                 variant="cta" 
                 size="lg" 
-                className="w-full text-lg py-6 cta-pulse"
+                className="w-full text-lg py-6"
+                onClick={() => window.open("https://chat.invictron.ai/widget/booking/HPizuMrq8o0CGLb3NTGl", "_blank")}
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Book Appointment Now
@@ -88,6 +89,10 @@ const BookingContact = () => {
                 variant="wellness" 
                 size="lg"
                 className="w-full text-lg py-6"
+                onClick={() => window.open(
+                  "https://www.google.com/maps/dir/?api=1&destination=Art+of+Living+Yoga+and+Meditation+Center+–+Mansarovar,+73/199,+Shipra+Path,+Near+Tagore+Hospital,+Mansarovar+Sector+7,+Jaipur,+Rajasthan+302020",
+                  "_blank"
+                )}
               >
                 <MapPin className="mr-2 h-5 w-5" />
                 Get Directions
@@ -97,22 +102,19 @@ const BookingContact = () => {
 
           {/* Map & Additional Info */}
           <div className="space-y-8 float-up">
-            {/* Map Placeholder */}
-            <Card className="bg-gradient-card border-border/50 shadow-card overflow-hidden">
-              <div className="h-80 bg-gradient-to-br from-wellness-100 to-wellness-200 relative flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-primary-light rounded-full mx-auto flex items-center justify-center">
-                    <MapPin className="h-8 w-8 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Sri Sri Wellbeing Centre</p>
-                    <p className="text-muted-foreground">Mansarovar, Jaipur</p>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    View on Google Maps
-                  </Button>
-                </div>
-              </div>
+            {/* Google Map Card with Gradient */}
+            <Card className="bg-gradient-card border-border/50 shadow-card overflow-hidden rounded-xl relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.4119167173317!2d75.76913071101654!3d26.8586509765821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5daf6798857%3A0xae2889faf22e8a84!2sArt%20of%20Living%20Yoga%20and%20Meditation%20Center%20%E2%80%93%20Mansarovar!5e0!3m2!1sen!2sin!4v1757769923861!5m2!1sen!2sin"
+                width="100%"
+                height="320"
+                className="border-0 rounded-xl"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-wellness-100/30 to-wellness-200/30 rounded-xl pointer-events-none" />
             </Card>
 
             {/* Additional Information */}
