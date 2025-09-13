@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Sri Sri Wellbeing Brand Colors - Healing & Wellness Palette */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 25%;
+
+    /* Primary: Teal Green (Sri Sri Wellbeing brand) */
+    --primary: 174 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 174 45% 85%;
+    --primary-dark: 174 70% 35%;
+
+    /* Secondary: Soft wellness pastels */
+    --secondary: 174 25% 96%;
+    --secondary-foreground: 174 60% 25%;
+
+    /* Wellness tones */
+    --muted: 174 15% 97%;
+    --muted-foreground: 174 10% 55%;
+
+    --accent: 174 30% 92%;
+    --accent-foreground: 174 60% 30%;
+
+    /* Orange CTA accent */
+    --cta: 25 85% 60%;
+    --cta-foreground: 0 0% 100%;
+    --cta-hover: 25 85% 50%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 174 20% 90%;
+    --input: 174 20% 95%;
+    --ring: 174 60% 45%;
+
+    --radius: 12px;
+
+    /* Wellness gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(174 60% 45%), hsl(174 45% 65%));
+    --gradient-section: linear-gradient(180deg, hsl(174 15% 98%), hsl(0 0% 100%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(174 15% 98%));
+    
+    /* Healing shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(174 30% 80% / 0.15);
+    --shadow-card: 0 8px 30px -5px hsl(174 40% 70% / 0.2);
+    --shadow-cta: 0 6px 25px -3px hsl(25 85% 60% / 0.3);
+
+    /* Animation curves */
+    --ease-healing: cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-smooth: all 0.4s var(--ease-healing);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme for wellness (soft, not harsh) */
+    --background: 174 15% 8%;
+    --foreground: 174 10% 92%;
+
+    --card: 174 15% 10%;
+    --card-foreground: 174 10% 92%;
+
+    --popover: 174 15% 10%;
+    --popover-foreground: 174 10% 92%;
+
+    --primary: 174 50% 60%;
+    --primary-foreground: 174 15% 8%;
+    --primary-light: 174 30% 25%;
+    --primary-dark: 174 60% 55%;
+
+    --secondary: 174 15% 15%;
+    --secondary-foreground: 174 10% 85%;
+
+    --muted: 174 10% 12%;
+    --muted-foreground: 174 8% 65%;
+
+    --accent: 174 15% 18%;
+    --accent-foreground: 174 10% 85%;
+
+    --cta: 25 80% 65%;
+    --cta-foreground: 174 15% 8%;
+    --cta-hover: 25 85% 70%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 174 15% 8%;
+
+    --border: 174 10% 20%;
+    --input: 174 10% 15%;
+    --ring: 174 50% 60%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(174 20% 12%), hsl(174 25% 15%));
+    --gradient-section: linear-gradient(180deg, hsl(174 12% 10%), hsl(174 15% 8%));
+    --gradient-card: linear-gradient(145deg, hsl(174 15% 12%), hsl(174 10% 8%));
+    
+    --shadow-soft: 0 4px 20px -2px hsl(174 50% 5% / 0.4);
+    --shadow-card: 0 8px 30px -5px hsl(174 40% 5% / 0.5);
+    --shadow-cta: 0 6px 25px -3px hsl(25 80% 50% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Wellness animations */
+  .fade-in {
+    animation: fadeIn 0.8s var(--ease-healing) forwards;
+  }
+
+  .float-up {
+    animation: floatUp 1s var(--ease-healing) forwards;
+  }
+
+  .wellness-hover {
+    @apply transition-all duration-300 ease-out hover:scale-105 hover:shadow-card;
+  }
+
+  .cta-pulse {
+    animation: ctaPulse 2s infinite;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    background: var(--gradient-hero);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(var(--cta) / 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px hsl(var(--cta) / 0);
+  }
+}
